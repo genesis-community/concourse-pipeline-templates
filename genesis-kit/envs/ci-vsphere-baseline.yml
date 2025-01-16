@@ -1,16 +1,12 @@
 ---
 kit:
-  features:
-    - ((append))
-    - small-footprint
+  features: []
+  ci:
+    job: deploy
 
 genesis:
-  env:   ci-vsphere-baseline
+  env: ci-vsphere-baseline
+  min_version: 3.0.9
 
 params:
-  disk_type:          default
-  base_domain:        (( concat meta._ip_prefix "9.10.netip.cc" ))
-  postgres_vip:       (( concat meta._ip_prefix "9.9" ))
-  availability_zones: [z1]
-  haproxy_ips:        [ (( concat meta._ip_prefix "9.10" )) ]
-  haproxy_ips:        [10.128.9.10]
+  cf_deployment_env: rsat-bc-genesis-ci
